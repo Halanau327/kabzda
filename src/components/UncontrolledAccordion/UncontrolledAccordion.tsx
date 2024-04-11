@@ -10,11 +10,10 @@ export const UncontrolledAccordion = ({titleValue}: AccordionPropsType) => {
         return (
             <div>
                 <AccordionTitle title={titleValue}/>
+                <button onClick={() => setCollapsed(!collapsed)}>TOGGLE</button>
                 {!collapsed && <AccordionBody/>}
-                <button onClick={() => setCollapsed(false)}>TOGGLE</button>
             </div>
         );
-
 };
 
 type AccordionTitlePropsType = {
