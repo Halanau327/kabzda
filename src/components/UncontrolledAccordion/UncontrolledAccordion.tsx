@@ -1,28 +1,25 @@
 import React, {useState} from 'react';
 
-type AccordionPropsType = {
-    titleValue: string
-}
 
-export const UncontrolledAccordion = ({titleValue}: AccordionPropsType) => {
+
+export const UncontrolledAccordion = () => {
     let [collapsed, setCollapsed] = useState(true)
 
         return (
             <div>
-                <AccordionTitle title={titleValue}/>
-                <button onClick={() => setCollapsed(!collapsed)}>TOGGLE</button>
+                <AccordionTitle onClick={() => setCollapsed(!collapsed)}/>
                 {!collapsed && <AccordionBody/>}
             </div>
         );
 };
 
 type AccordionTitlePropsType = {
-    title: string
+    onClick: () => void
 }
 
-const AccordionTitle = ({title}: AccordionTitlePropsType) => {
+const AccordionTitle = ({onClick}: AccordionTitlePropsType) => {
     return (
-        <h3>-- {title} --</h3>
+        <h3 onClick={() => {onClick()}}>-- Menu --</h3>
     )
 }
 
