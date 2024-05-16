@@ -32,9 +32,15 @@ export const Select = ({value, onChange, items}: SelectPropsType) => {
         }
     }
 
+    const onKeyUp = () => {
+        for(let i = 0; i < items.length; i++) {
+
+        }
+    }
+
     return (
         <>
-            <div className={styles.select}>
+            <div className={styles.select} onKeyUp={onKeyUp} tabIndex={0}>
                 <span className={styles.main} onClick={toggleItems}>{selectedItem && selectedItem.title}</span>
                 {
                     active && <div className={styles.items}>
