@@ -1,5 +1,4 @@
 import {useEffect, useMemo, useState} from "react";
-import {toLocaleString} from "node";
 
 export default {
     title: 'useEffect demo'
@@ -47,8 +46,8 @@ export const SimpleExampleClock = () => {
     }, []);
 
     return <>
-        {/*Hello, counter: {counter}*/}
-        <time dateTime={toLocaleString({counter})}></time>
+        Hello, counter: {counter}
+        {/*<time dateTime={toISOString({counter})}></time>*/}
     </>
 }
 
